@@ -5,5 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+
+# Make Pokemon
+%w(Squirtle Charmander Bulbasaur Pikachu).each do |name|
+  Pokemon.create name: name, level: 1, trainer_id: rand(1..4)
+end
+
+# Make other trainers
+%w(Ash Gary Misty Brock).each do |name|
+  Trainer.create name: name
+end
