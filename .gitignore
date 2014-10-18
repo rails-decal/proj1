@@ -31,3 +31,6 @@
 # Ignore temporary uploaded files
 public/tmp
 
+# Ignore answers.txt
+answers.txt
+
