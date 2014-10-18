@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#index'
+  root to: 'home#index'
   devise_for :trainers
   resources :trainers
 end

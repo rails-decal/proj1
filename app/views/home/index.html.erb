@@ -1,0 +1,8 @@
+<h3>Welcome to PokePortal</h3>
+<p><%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered</p>
+
+<% if @pokemon and current_trainer %>
+  <p> A wild <%= @pokemon.name %> has appeared!</p>
+  <!-- REPLACE THIS LINE BELOW -->
+  <div class="button medium"> Throw a Pokeball! </div>
+<% end %>

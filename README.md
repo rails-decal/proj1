@@ -1,14 +1,26 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**
 
 - [Project 1](#project-1)
   - [Instructions](#instructions)
-      - [Step 1: Create the Pokemon model](#step-1-create-the-pokemon-model)
-      - [Step n: Implement the ability to damage other trainers' Pokemon](#step-n-implement-the-ability-to-damage-other-trainers-pokemon)
+      - [Part 0: Setup PokePortal](#part-0-setup-pokeportal)
+      - [Part 1: Create the Pokemon model](#part-1-create-the-pokemon-model)
+      - [Part 2: Implement capturing Pokemon](#part-2-implement-capturing-pokemon)
+      - [Part 3: View other trainers' Pokemon](#part-3-view-other-trainers-pokemon)
+      - [Part 4: Implement the ability to damage other trainers' Pokemon](#part-4-implement-the-ability-to-damage-other-trainers-pokemon)
+      - [Part 5: Create your own new Pokemon](#part-5-create-your-own-new-pokemon)
+      - [Part 6: EXTRA CREDIT](#part-6-extra-credit)
+      - [Part 7: Submit your PokePortal](#part-7-submit-your-pokeportal)
   - [Hints](#hints)
-      - [Step 1: Create the Pokemon model](#step-1-create-the-pokemon-model-1)
-      - [Step n: Implement the ability to damage other trainers' Pokemon](#step-n-implement-the-ability-to-damage-other-trainers-pokemon-1)
+      - [General](#general)
+      - [Part 0: Setup PokePortal](#part-0-setup-pokeportal-1)
+      - [Part 1: Create the Pokemon model](#part-1-create-the-pokemon-model-1)
+      - [Part 2: Implement capturing Pokemon](#part-2-implement-capturing-pokemon-1)
+      - [Part 3: View other trainers' Pokemon](#part-3-view-other-trainers-pokemon-1)
+      - [Part 4: Implement the ability to damage other trainers' Pokemon](#part-4-implement-the-ability-to-damage-other-trainers-pokemon-1)
+      - [Part 5: Create your own new Pokemon](#part-5-create-your-own-new-pokemon-1)
+      - [Part 6: EXTRA CREDIT](#part-6-extra-credit-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -24,29 +36,157 @@ Throughout this project you will be creating a PokePortal, a mysterious realm wh
 * View your Pokemon
 * View other trainers' Pokemon
 * Damage and destroy other trainers' Pokemon
+* Create your own new Pokemon
 
 ## Instructions
 
-#### Step 1: Create the Pokemon model
+#### Part 0: Setup PokePortal
 
-Run the `generate` method you've learned to generate the Pokemon model. The model should have the following attributes
+Clone the repo (TODO:URL) in your terminal. Cd into the directory and migrate your database, then start your server. In localhost, you should see an error that says: "uninitialized constant HomeController::Pokemon". This is expected; let's fix it.
 
-* name: string
-* level: integer
-* trainer_id: integer
+In `answers.txt`, answer Question 0.
 
-After you've generated the model, migrate it into the database. Then, edit your Pokemon.rb and Trainer.rb file so that a Pokemon belongs to a Trainer and a Trainer can have many Pokemon.
+#### Part 1: Create the Pokemon model
 
-#### Step n: Implement the ability to damage other trainers' Pokemon
+- Run the `generate` method you've learned to generate the Pokemon model. The model should have the following attributes
+  - name: string
+  - level: integer
+  - trainer_id: integer
+- After you've generated the model, migrate it into the database.
+- Edit your Pokemon.rb and Trainer.rb file so that a Pokemon belongs to a Trainer and a Trainer can have many Pokemon.
+- Create a controller for your Pokemon model.
+- Create some starter Pokemon in the PokePortal with the seed file we've provided.
 
-First, generate a migration that adds a field called `health` of type `integer` to the Pokemon model. Don't forget to migrate. Also, go into your `db/seeds.rb` file and make all seed Pokemon start out with 100 health.
+Go to localhost - you should be able to see the home page and sign up now. Once you've logged in and go back to the home page, some wild Pokemon should appear with every refresh, however you can't capture them!
+
+In `answers.txt`, answer Question 1.
+
+#### Part 2: Implement capturing Pokemon
+
+- In `views/home/index.html.erb`, replace the div button with the following code: `<%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>`
+- In your Pokemon controller, add a function called `capture`. This function should:
+  - Grab the id of the Pokemon from the parameters and set that Pokemon's trainer to be the current trainer logged in.
+    - What's great about Devise (the user authentication gem we already have set up) is that it predefines a method to give us the current user logged in - or in this case, current trainer. To grab the current trainer, use `current_trainer`. You can use this in controllers and views.
+  - Don't forget to save the changes to the Pokemon!!!
+  - Redirect to the home page
+- Create a new route in your routes file that will call the function you just wrote. Name the path `capture` as its prefix. Set the URI pattern to be "capture".
+
+On your localhost, you should now be able to capture Pokemon! Double check in your console.
+
+In `answers.txt`, answer Question 2.
+
+#### Part 3: View other trainers' Pokemon
+
+- Figure out where in the app you can see a trainer's profile. In that view, add a list of the trainer's Pokemon. Each Pokemon should show its name and level.
+
+On your localhost, you should now be able to view all your Pokemon in your profile!
+
+In `answers.txt`, answer Question 3.
+
+#### Part 4: Implement the ability to damage other trainers' Pokemon
+
+- Make each Pokemon have health. Don't forget to migrate.
+  - Go into your `db/seeds.rb` file and make all seed Pokemon start out with 100 health.
+  - Show health for each Pokemon in the list on a Trainer's profile.
+- Based on Part 2, you should be able to mimic the capture method to implement a damage method.
+  - Each damage should subtract 10 health from the Pokemon.
+  - You should redirect back to the trainer's profile page at the end of the damage method. Hint: run `rake routes` to see what path you need.
+- If a Pokemon reaches <= 0 health after being damaged, destroy it. It should no longer exist in the database. It is dead.
+
+On your profile page, try damaging your own Pokemon. Try destroying one.
+
+In `answers.txt`, answer Question 4.
+
+#### Part 5: Create your own new Pokemon
+
+Now that it's so easy to destroy Pokemon, we need a way to create new Pokemon.
+
+In this part, we will allow the current trainer logged in to create his or her own Pokemon that will automatically belong to himself/herself.
+
+- Create a folder `pokemons` in `views`. Make a new file in that folder called `new.html.erb`.
+  - Use simple_form to make a form for creating a new Pokemon. You should refer to the [documentation on simple_form](https://github.com/plataformatec/simple_form#usage). The only field in your form should be the Pokemon's name.
+  - Create the necessary methods in the Pokemons controller that are needed to show the form and to handle the form's data after submit.
+    - Since we only had the Pokemon's name in the form, we want to set every other attribute to a default. Default health to 100 and level to 1.
+    - Set the new Pokemon's trainer to the current logged-in trainer.
+    - Redirect to the current logged-in trainer's profile.
+  - Route the methods accordingly.
+- Create a button that **only shows up in the current logged-in trainer's profile** and links to the form you just created.
+
+Now if you go into your localhost, you should be able to create new Pokemon for yourself. But we want to make sure you can never create Pokemon with the same name, or even worse, no name! What do we need? A validation.
+
+- In the Pokemon model, validate a name is present and that it is also unique.
+- In the method that you created to handle the form data in your Pokemons controller, give the following logic at the end:
+  - If you successfully save the new Pokemon instance, then redirect to the current logged-in trainer's profile, just like before.
+  - Else, redirect to the form and flash the appropriate error.
+
+Now you shouldn't be able to create new Pokemon with no name or a duplicate name.
+
+In `answers.txt`, answer Question 5.
+
+#### Part 6: EXTRA CREDIT
+
+**[+1% of final grade]** Let friends join PokePortal.
+  - Deploy this app on Heroku.
+
+**[+2% of final grade]** Implement Pokemon healing.
+  - Increment health by 10.
+  - Your Pokemon should now be hidden when health is <= 0, instead of being destroyed.
+  - You should be able to heal only your **own** Pokemon.
+
+**[+5% of final grade]** Implement Pokemon battling.
+  - Right now, damaging is lame. Your Pokemon, not yourself, should damage other Pokemon. Make it so that when you click damage, you have to select one of your own Pokemon to gain experience from the attack, and level up!
+  - You should choose your Pokemon from a dropdown menu.
+
+#### Part 7: Submit your PokePortal
+
+- At github.com, make a new empty repo called proj1.
+- Repoint the remote of your local repo to the new repo you just created.
+  - In your terminal, run `git remote set-url origin git://new.url.here` using the url of your new repo (this can be found in the bottom right of your empty repo on github.com, in the box above **Clone in Desktop**).
+- Run `git add --all`.
+- Run `git commit -m "I am a Pokemon master."`.
+- Run `git push origin master`.
+- Copy and paste your answers from `answers.txt` file to [this Google form](TODO:URL) and submit.
+
+You are a Pokemon master.
 
 ## Hints
 
-#### Step 1: Create the Pokemon model
+#### General
 
-Reference [Lecture 6](https://slides.com/railsdecal/week-6-model-relationships) for a recap of how to make a Pokemon belong to a Trainer
+If you ever have to reset your database (for instance you destroyed all the Pokemon in the PokePortal or you messed up your migrations), run `rake db:reset` to drop, recreate, migrate, and reseed your database.
 
-#### Step n: Implement the ability to damage other trainers' Pokemon
+#### Part 0: Setup PokePortal
 
-Recall the syntax to add a new field to a model is `rails generate migration AddFieldNameToTableName field_name:datatype`.
+Remember, to create a database, run `rake db:create`.
+
+#### Part 1: Create the Pokemon model
+
+Reference [Lecture 6](https://slides.com/railsdecal/week-6-model-relationships) for a recap of how to make a Pokemon belong to a Trainer. To set up the seed Pokemon, use `rake db:seed`.
+
+#### Part 2: Implement capturing Pokemon
+
+To redirect to a certain page, use `redirect_to PREFIX_PATH`.
+
+`rake routes` will be very helpful in debugging. Since we are updating a Pokemon, your route should be a PATCH. If you need to jog your memory on routing, reference how routes were done in [Lecture 4](https://docs.google.com/document/d/1uG8uLIR8cybq4_wQQSVB-6zP3PKTJ2sDmqlK3o7Q_no/edit?usp=sharing)
+
+Also, if you don't know what a URI pattern in a route is, look back at [Lecture 4](https://docs.google.com/document/d/1uG8uLIR8cybq4_wQQSVB-6zP3PKTJ2sDmqlK3o7Q_no/edit?usp=sharing) again.
+
+To learn more about what `button_to` actually does, read up on its [documentation here](http://apidock.com/rails/ActionView/Helpers/UrlHelper/button_to) and [maybe this Stack Overflow](http://stackoverflow.com/questions/12475299/ruby-on-rails-button-to-link-to) post as well.
+
+#### Part 3: View other trainers' Pokemon
+
+Refer to the [live coding portion of Lecture 6](http://www.youtube.com/watch?v=h_nCL3nTagw).
+
+#### Part 4: Implement the ability to damage other trainers' Pokemon
+
+For help with the redirect path, refer to [Lab 4](https://docs.google.com/a/berkeley.edu/document/d/1eRJ8uGfZNohrTnSZgrrFF7X3mvcHdztRhDrfKV1jf9E). The helpful section is towards the end.
+
+#### Part 5: Create your own new Pokemon
+
+[Lab 4](https://docs.google.com/a/berkeley.edu/document/d/1eRJ8uGfZNohrTnSZgrrFF7X3mvcHdztRhDrfKV1jf9E) goes over everything you need to know about forms and routing for forms. If you haven't already done it, we strongly recommend doing it before tackling Part 5.
+
+To flash the appropriate error, use the line `flash[:error] = @pokemon.errors.full_messages.to_sentence`. This works because in `views/layouts/application.html.erb`, it renders `views/layouts/_messages.html.erb`. Take a look at that file and see what it is doing.
+
+#### Part 6: EXTRA CREDIT
+
+For easy deployment, reference [Heroku's deployment docs](https://devcenter.heroku.com/articles/getting-started-with-rails4#). You'll need to look at the *Local Workstation Setup* part and the *Deploy your application to Heroku* part.
