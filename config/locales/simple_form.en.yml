@@ -14,13 +14,13 @@ en:
     # labels:
     #   defaults:
     #     password: 'Password'
-    #   user:
+    #   trainer:
     #     new:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
     # hints:
     #   defaults:
-    #     username: 'User name to sign in.'
+    #     username: 'Trainer username to sign in.'
     #     password: 'No special characters, please.'
 
