@@ -11,6 +11,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'foundation-rails'
 gem 'simple_form'
+
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
@@ -18,6 +19,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
 group :production do
   gem 'pg'
   gem 'thin'
