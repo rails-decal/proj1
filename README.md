@@ -187,6 +187,9 @@ For help with the redirect path, refer to [Lab 4](https://docs.google.com/a/berk
 
 [Lab 4](https://docs.google.com/a/berkeley.edu/document/d/1eRJ8uGfZNohrTnSZgrrFF7X3mvcHdztRhDrfKV1jf9E) goes over everything you need to know about forms and routing for forms. If you haven't already done it, we strongly recommend doing it before tackling Part 5.
 
+If you want to pass in a path that simple_form should go to after a sumbit, use this syntax:
+```simple_form_for @object, :url => prefix_path```
+
 For help with validations, you should read the [Rails documentation on validation](http://guides.rubyonrails.org/active_record_validations.html), specifically the sections for "presence" and "uniqueness". You can also Google and there should be many Stack Overflow posts to help you out.
 
 To flash the appropriate error, use the line ```flash[:error] = @pokemon.errors.full_messages.to_sentence```. This works because in ```views/layouts/application.html.erb```, it is rendering something at the very end. Take a look at that file and see what it is doing. If you don't already know what ```application.html.erb``` does, you should Google it and understand its function. 
