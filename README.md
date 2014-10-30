@@ -177,7 +177,7 @@ To learn more about what ```button_to``` actually does, read up on its [document
 
 #### Part 3: View other trainers' Pokemon
 
-Refer to the [live coding portion of Lecture 6](http://www.youtube.com/watch?v=h_nCL3nTagw).
+Refer to the [live coding portion of Lecture 6](https://github.com/rails-decal/lecture6).
 
 #### Part 4: Implement the ability to damage other trainers' Pokemon
 
