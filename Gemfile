@@ -15,7 +15,7 @@ gem 'simple_form'
 group :development do
   gem 'sqlite3'
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_20]
+  gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'rails_layout'
 end
