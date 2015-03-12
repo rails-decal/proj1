@@ -39,7 +39,7 @@ Throughout this project you will be creating a PokePortal, a mysterious realm wh
 * Damage and destroy other trainers' Pokemon
 * Create your own new Pokemon
 
-**Important: Throughout this project you will be answering short answer questions in this [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form). If you are going to work on this project over a long period of time though, we encourage you to answer the questions in a separate text file so that your answers are not lost if your browser happens to restart or something, since Google forms doesn't save your answers.**
+**Important: Throughout this project you will be answering short answer questions in this [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform). If you are going to work on this project over a long period of time though, we encourage you to answer the questions in a separate text file so that your answers are not lost if your browser happens to restart or something, since Google forms doesn't save your answers.**
 
 ## Instructions
 
@@ -47,7 +47,7 @@ Throughout this project you will be creating a PokePortal, a mysterious realm wh
 
 Clone the repo (run ```git clone git@github.com:rails-decal/proj1.git```) in your terminal. Cd into the directory, run ```bundle install --without production``` and migrate your database, then start your server. (If you have trouble running the bundle install, try running ```rvm use 2.1.2``` in your terminal first). In localhost, you should see an error that says: "uninitialized constant HomeController::Pokemon". This is expected; let's fix it.
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 0.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 0.
 
 #### Part 1: Create the Pokemon model
 
@@ -62,7 +62,7 @@ In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJ
 
 Go to localhost - you should be able to see the home page and sign up now. Once you've logged in and go back to the home page, some wild Pokemon should appear with every refresh, however you can't capture them!
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 1.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 1.
 
 #### Part 2: Implement capturing Pokemon
 
@@ -76,7 +76,7 @@ In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJ
 
 On your localhost, you should now be able to capture Pokemon! Double check in your console that a captured Pokemon now belongs to you.
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 2.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 2.
 
 #### Part 3: View other trainers' Pokemon
 
@@ -84,7 +84,7 @@ In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJ
 
 On your localhost, you should now be able to view all your Pokemon in your profile!
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 3.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 3.
 
 #### Part 4: Implement the ability to damage other trainers' Pokemon
 
@@ -100,7 +100,7 @@ In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJ
 
 On your profile page, try damaging your own Pokemon. Try destroying one.
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 4.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 4.
 
 #### Part 5: Create your own new Pokemon
 
@@ -126,7 +126,7 @@ Now if you go into your localhost, you should be able to create new Pokemon for 
 
 Now you shouldn't be able to create new Pokemon with no name or a duplicate name.
 
-In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), answer Question 5.
+In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 5.
 
 #### Part 6: EXTRA CREDIT
 
@@ -151,7 +151,7 @@ In the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJ
 - Run ```git commit -m "I am a Pokemon master."```.
 - Run ```git push origin master```.
 
-Link your repo in the last question of the [Google Form](https://docs.google.com/forms/d/1VhMa7Ml0PdLYEPztMRqoBMsHrJH3O_jiKSJoOKRBYlk/viewform?usp=send_form), and submit!
+Link your repo in the last question of the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), and submit!
 
 Congratulations. You are a Pokemon master.
 
@@ -169,9 +169,9 @@ Reference [Lecture 6](https://slides.com/railsdecal/week-6-model-relationships) 
 
 To redirect to a certain page, use ```redirect_to PREFIX_PATH```.
 
-```rake routes``` will be very helpful in debugging. Since we are updating a Pokemon, your route should be a PATCH. If you need to jog your memory on routing, reference how routes were done in [Lecture 4](https://docs.google.com/document/d/1uG8uLIR8cybq4_wQQSVB-6zP3PKTJ2sDmqlK3o7Q_no/edit?usp=sharing)
+```rake routes``` will be very helpful in debugging. Since we are updating a Pokemon, your route should be a PATCH. If you need to jog your memory on routing, reference how routes were done in [Lecture 4](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform)
 
-Also, if you don't know what a URI pattern in a route is, look back at [Lecture 4](https://docs.google.com/document/d/1uG8uLIR8cybq4_wQQSVB-6zP3PKTJ2sDmqlK3o7Q_no/edit?usp=sharing) again.
+Also, if you don't know what a URI pattern in a route is, look back at [Lecture 4](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform) again.
 
 To learn more about what ```button_to``` actually does, read up on its [documentation here](http://apidock.com/rails/ActionView/Helpers/UrlHelper/button_to) and [maybe this Stack Overflow](http://stackoverflow.com/questions/12475299/ruby-on-rails-button-to-link-to) post as well.
 
