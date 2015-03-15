@@ -169,9 +169,9 @@ Reference [Lecture 6](https://slides.com/railsdecal/week-6-model-relationships) 
 
 To redirect to a certain page, use ```redirect_to PREFIX_PATH```.
 
-```rake routes``` will be very helpful in debugging. Since we are updating a Pokemon, your route should be a PATCH. If you need to jog your memory on routing, reference how routes were done in [Lecture 4](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform)
+```rake routes``` will be very helpful in debugging. Since we are updating a Pokemon, your route should be a PATCH. If you need to jog your memory on routing, reference how routes were done in [Lecture 4](https://www.youtube.com/watch?v=3gNyJNPPTw4)
 
-Also, if you don't know what a URI pattern in a route is, look back at [Lecture 4](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform) again.
+Also, if you don't know what a URI pattern in a route is, look back at [Lecture 4](https://www.youtube.com/watch?v=3gNyJNPPTw4) again.
 
 To learn more about what ```button_to``` actually does, read up on its [documentation here](http://apidock.com/rails/ActionView/Helpers/UrlHelper/button_to) and [maybe this Stack Overflow](http://stackoverflow.com/questions/12475299/ruby-on-rails-button-to-link-to) post as well.
 
@@ -181,11 +181,8 @@ Refer to the [live coding portion of Lecture 6](https://github.com/rails-decal/l
 
 #### Part 4: Implement the ability to damage other trainers' Pokemon
 
-For help with the redirect path, refer to [Lab 4](https://docs.google.com/a/berkeley.edu/document/d/1eRJ8uGfZNohrTnSZgrrFF7X3mvcHdztRhDrfKV1jf9E). The helpful section is towards the end.
 
 #### Part 5: Create your own new Pokemon
-
-[Lab 4](https://docs.google.com/a/berkeley.edu/document/d/1eRJ8uGfZNohrTnSZgrrFF7X3mvcHdztRhDrfKV1jf9E) goes over everything you need to know about forms and routing for forms. If you haven't already done it, we strongly recommend doing it before tackling Part 5.
 
 If you want to designate a path that simple_form should go to after a submit, use this syntax:
 ```simple_form_for @object, :url => prefix_path```
