@@ -25,7 +25,7 @@
 
 # Project 1 - PokePortal (an individual project)
 
-For this project, we will have high-level project instructions in the first section of this readme. If you find yourself confused about how to implement a specific step, there are more detailed instructions/hints in the second section of the readme that you can reference, however try to tackle each step yourselves first before referencing the hints. 
+For this project, we will have high-level project instructions in the first section of this readme. If you find yourself confused about how to implement a specific step, there are more detailed instructions/hints in the second section of the readme that you can reference, however try to tackle each step yourselves first before referencing the hints.
 
 Please make sure you consistently keep your repo up to date by running ```git pull origin master```. If you're having bundle install issues, please refer to Piazza for help. You can try ```bundle install --without production``` if it's a pg gem issue.
 
@@ -39,15 +39,15 @@ Throughout this project you will be creating a PokePortal, a mysterious realm wh
 * Damage and destroy other trainers' Pokemon
 * Create your own new Pokemon
 
-**Important: Throughout this project you will be answering short answer questions in this [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform). If you are going to work on this project over a long period of time though, we encourage you to answer the questions in a separate text file so that your answers are not lost if your browser happens to restart or something, since Google forms doesn't save your answers.**
+**Important: You will be answering questions in answers.md along the way.**
 
 ## Instructions
 
 #### Part 0: Setup PokePortal
 
-Clone the repo (run ```git clone git@github.com:rails-decal/proj1.git```) in your terminal. Cd into the directory, run ```bundle install --without production``` and migrate your database, then start your server. (If you have trouble running the bundle install, try running ```rvm use 2.1.2``` in your terminal first). In localhost, you should see an error that says: "uninitialized constant HomeController::Pokemon". This is expected; let's fix it.
+Clone the repo (run ```git clone git@github.com:rails-decal/proj1.git```) in your terminal. Cd into the directory, run ```bundle install --without production``` and migrate your database, then start your server. (If you have trouble running the bundle install, try running ```rvm use 2.2.0``` in your terminal first). In localhost, you should see an error that says: "uninitialized constant HomeController::Pokemon". This is expected; let's fix it.
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 0.
+In answer.md, answer Question 0.
 
 #### Part 1: Create the Pokemon model
 
@@ -62,7 +62,7 @@ In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6
 
 Go to localhost - you should be able to see the home page and sign up now. Once you've logged in and go back to the home page, some wild Pokemon should appear with every refresh, however you can't capture them!
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 1.
+In answers.md, answer Question 1.
 
 #### Part 2: Implement capturing Pokemon
 
@@ -76,7 +76,7 @@ In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6
 
 On your localhost, you should now be able to capture Pokemon! Double check in your console that a captured Pokemon now belongs to you.
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 2.
+In answers.md, answer Question 2.
 
 #### Part 3: View other trainers' Pokemon
 
@@ -84,7 +84,7 @@ In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6
 
 On your localhost, you should now be able to view all your Pokemon in your profile!
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 3.
+In answers.md, answer Question 3.
 
 #### Part 4: Implement the ability to damage other trainers' Pokemon
 
@@ -100,7 +100,7 @@ In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6
 
 On your profile page, try damaging your own Pokemon. Try destroying one.
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 4.
+In answers.md, answer Question 4.
 
 #### Part 5: Create your own new Pokemon
 
@@ -126,7 +126,7 @@ Now if you go into your localhost, you should be able to create new Pokemon for 
 
 Now you shouldn't be able to create new Pokemon with no name or a duplicate name.
 
-In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), answer Question 5.
+In answers.md, answer Question 5.
 
 #### Part 6: EXTRA CREDIT
 
@@ -151,7 +151,7 @@ In the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6
 - Run ```git commit -m "I am a Pokemon master."```.
 - Run ```git push origin master```.
 
-Link your repo in the last question of the [Google Form](https://docs.google.com/forms/d/1-8n6NvRUrk1q2ibpXCz4agnyR6tAU3dDmmrzj8ZefWU/viewform), and submit!
+Link your repo in the last question of answers.md, and submit!
 
 Congratulations. You are a Pokemon master.
 
@@ -189,7 +189,7 @@ If you want to designate a path that simple_form should go to after a submit, us
 
 For help with validations, you should read the [Rails documentation on validation](http://guides.rubyonrails.org/active_record_validations.html), specifically the sections for "presence" and "uniqueness". You can also Google and there should be many Stack Overflow posts to help you out.
 
-To flash the appropriate error, use the line ```flash[:error] = @pokemon.errors.full_messages.to_sentence```. This works because in ```views/layouts/application.html.erb```, it is rendering something at the very end. Take a look at that file and see what it is doing. If you don't already know what ```application.html.erb``` does, you should Google it and understand its function. 
+To flash the appropriate error, use the line ```flash[:error] = @pokemon.errors.full_messages.to_sentence```. This works because in ```views/layouts/application.html.erb```, it is rendering something at the very end. Take a look at that file and see what it is doing. If you don't already know what ```application.html.erb``` does, you should Google it and understand its function.
 
 #### Part 6: EXTRA CREDIT
 
