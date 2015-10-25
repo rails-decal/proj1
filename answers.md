@@ -2,7 +2,7 @@
 
 # Q1: How are the random Pokemon appearing? What is the common factor between all the possible Pokemon that appear? *
 
-# Question 2a: What does the following line in the help text do? Be specific about what "capture_path(id: @pokemon)" is doing. If you're having trouble, look at the Help section in the README.
+# Question 2a: What does the following line do "<%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>"? Be specific about what "capture_path(id: @pokemon)" is doing. If you're having trouble, look at the Help section in the README.
 
 # Question 3: What would you name your own Pokemon?
 
