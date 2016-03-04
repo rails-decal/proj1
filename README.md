@@ -90,7 +90,7 @@ In answers.md, answer Question 3.
 
 - Make the Pokemon model have a health column as well.
   - Go into your ```db/seeds.rb``` file and make all seed Pokemon start out with 100 health.
-  - After you've changed the seeds, run ```rake db:reset```. This command drops your database, creates a new one, runs all migrations, and seeds the database. Now you should have seeded Pokemon with health as well.
+  - After you've changed the seeds, run ```rake db:reset``` then ```rake db:seed```. This command drops your database, creates a new one, runs all migrations, and seeds the database. Now you should have seeded Pokemon with health as well.
   - Show health for each Pokemon in the list on a Trainer's profile.
 - Based on Part 2, you should be able to mimic the capture method to implement a damage method.
   - Each damage should subtract 10 health from the Pokemon.
